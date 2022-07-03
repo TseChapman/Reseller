@@ -18,7 +18,7 @@
   function setupDB() {
     console.log(db);
     db.transaction(function(tx) {
-      tx.executeSql("DROP TABLE shoeSize");
+      //tx.executeSql("DROP TABLE shoeSize");
       tx.executeSql("CREATE TABLE IF NOT EXISTS shoeSize(id INTEGER PRIMARY KEY UNIQUE, eu FLOAT, usMen FLOAT, usWomen FLOAT, uk FLOAT, cm FLOAT, usKid TEXT);", [], null, function(tx, error) {console.error(error);});
       tx.executeSql("INSERT INTO shoeSize (id, eu, usMen, usWomen, uk, cm, usKid) VALUES (1, 32.5, 1, 2.5, 0.5, 20, '1Y');", [], null, function(tx, error) {console.error(error);});
       tx.executeSql("INSERT INTO shoeSize (id, eu, usMen, usWomen, uk, cm, usKid) VALUES (2, 33, 1.5, 3, 1, 20.5, '1.5Y');", [], null, function(tx, error) {console.error(error);});
@@ -273,9 +273,10 @@
   function updateSizeSelection(system) {
     try {
       // Get a list of size of the eu shoe system
-      let sqlString = 'SELECT ' + system + ' FROM shoeSize;';
+      let sqlString = "SELECT " + system + " FROM shoeSize;";
       db.transaction(function(tx) {
         tx.executeSql(sqlString, [], function(tx, results) {
+          console.log("hello");
           handleSizeSelectionResult(system, results);
         }, function(tx, error) {console.error(error);});
       });
@@ -312,7 +313,7 @@
     // Get same shoe size from database
     let sizeString = parseFloat(shoeSize);
     db.transaction(function(tx) {
-      let sql =  'SELECT * FROM shoeSize WHERE ' + selected_system + ' = ' + sizeString + ';';
+      let sql =  "SELECT * FROM shoeSize WHERE " + selected_system + " = " + sizeString + ";";
       tx.executeSql(sql, [], function (tx, res) {
         for (let i = 0; i < res.rows.length; i++) {
           // display in table
