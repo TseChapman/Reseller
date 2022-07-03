@@ -273,7 +273,7 @@
   function updateSizeSelection(system) {
     try {
       // Get a list of size of the eu shoe system
-      let sqlString = "SELECT " + system + " FROM shoeSize;"
+      let sqlString = 'SELECT " + system + " FROM shoeSize;';
       db.transaction(function(tx) {
         tx.executeSql(sqlString, [], function(tx, results) {
           handleSizeSelectionResult(system, results);
@@ -312,7 +312,7 @@
     // Get same shoe size from database
     let sizeString = parseFloat(shoeSize);
     db.transaction(function(tx) {
-      let sql =  "SELECT * FROM shoeSize WHERE " + selected_system + " = " + sizeString + ";";
+      let sql =  'SELECT * FROM shoeSize WHERE ' + selected_system + ' = ' + sizeString + ';';
       tx.executeSql(sql, [], function (tx, res) {
         for (let i = 0; i < res.rows.length; i++) {
           // display in table
