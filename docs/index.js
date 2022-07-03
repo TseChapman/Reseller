@@ -195,6 +195,7 @@
       });
     }
     updateSystemRow();
+    updateSizeRow();
   }
 
   function selectSystem(system) {
