@@ -94,7 +94,7 @@
 
   function initConvert(direction) {
     // Get the children from dropdown_item
-    let qs_string = "#convert_" + direction + " > .dropdown_item"
+    let qs_string = "#convert_" + direction + " > .dropdown_item";
     let currencies = qs(qs_string).children;
     // Add event listener to the currency options
     for (let i = 0; i < currencies.length; i++) {
@@ -224,11 +224,11 @@
       else if (headings[i].id == selected_system + "_heading") {
         // Hide the column
         if (!headings[i].classList.contains("hidden")) {
-          headings[i].classList.add("hidden")
+          headings[i].classList.add("hidden");
         }
       } else {
         if (headings[i].classList.contains("hidden")) {
-          headings[i].classList.remove("hidden")
+          headings[i].classList.remove("hidden");
         }
       }
     }
@@ -273,7 +273,7 @@
   function updateSizeSelection(system) {
     try {
       // Get a list of size of the eu shoe system
-      let sqlString = 'SELECT " + system + " FROM shoeSize;';
+      let sqlString = 'SELECT ' + system + ' FROM shoeSize;';
       db.transaction(function(tx) {
         tx.executeSql(sqlString, [], function(tx, results) {
           handleSizeSelectionResult(system, results);
