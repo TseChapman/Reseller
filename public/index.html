@@ -13,7 +13,7 @@
                 <section id="currency_selection">
                     <div class="dropdown" id="convert_from">
                         <button class="dropbtn">USD</button>
-                        <div id="currecy_dropdown" class="dropdown_item">
+                        <div class="dropdown_item">
                             <p id="usd">USD</p>
                             <p id="cny">CNY</p>
                             <p id="twd">NTD</p>
@@ -28,7 +28,7 @@
                     <div class="arrow">&rarr;</div>
                     <div class="dropdown" id="convert_to">
                         <button class="dropbtn">USD</button>
-                        <div id="currecy_dropdown" class="dropdown_item">
+                        <div class="dropdown_item">
                             <p id="usd">USD</p>
                             <p id="cny">CNY</p>
                             <p id="twd">NTD</p>
@@ -53,7 +53,48 @@
 
             <!-- Vertical Block-->
             <p class="vertical_block"></p>
-            <p id="shoe">3</p>
+            <section id="shoe">
+                <section id="shoe_size_table">
+                    <table>
+                        <tr id="system_row">
+                            <th id="system_dropdown">
+                                <div class="dropdown" id="system_selection">
+                                    <button class="dropbtn">EU</button>
+                                    <div class="dropdown_item">
+                                        <p id="eu">EU</p>
+                                        <p id="usMen">US Men</p>
+                                        <p id="usWomen">US Women</p>
+                                        <p id="uk">UK</p>
+                                        <p id="cm">CM</p>
+                                        <p id="usKid">US Kid</p>
+                                    </div>
+                                </div>
+                            </th>
+                            <th id="eu_heading" class="hidden">EU</th>
+                            <th id="usMen_heading">US Men</th>
+                            <th id="usWomen_heading">US Women</th>
+                            <th id="uk_heading">UK</th>
+                            <th id="cm_heading">CM</th>
+                            <th id="usKid_heading">US Kid</th>
+                        </tr>
+                        <tr id="size_row">
+                            <td id="size_dropdown">
+                                <div class="dropdown" id="size_selection">
+                                    <button class="dropbtn">0</button>
+                                    <div class="dropdown_item">
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="eu_size"></td>
+                            <td id="usMen_size"></td>
+                            <td id="usWomen_size"></td>
+                            <td id="uk_size"></td>
+                            <td id="cm_size"></td>
+                            <td id="usKid_size"></td>
+                        </tr>
+                    </table>
+                </section>
+            </section>
         </main>
     </body>
 </html>

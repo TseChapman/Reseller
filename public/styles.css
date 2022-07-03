@@ -57,11 +57,39 @@ main {
 #shoe {
     width: 68%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#shoe_size_table {
+    position: relative;
+    width: 100%;
+    height: 40%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    width: 16.5%;
+}
+
+#system_selection, #size_selection {
+    width: 100%;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
+}
+
+#convert_to, #convert_from {
     width: 39%;
     height: 20%;
 }
