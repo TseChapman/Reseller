@@ -237,7 +237,8 @@
     let row = id("size_row").children;
     for (let i = 0; i < row.length; i++) {
       if (row[i].id == "size_dropdown") {
-        continue;
+        let button = qs("#size_selection .dropbtn");
+        button.textContent = "Select size";
       }
       else if (row[i].id == selected_system + "_size") {
         if (!row[i].classList.contains("hidden")) {
@@ -286,11 +287,7 @@
     // Clear the dropdown items
     let dropdown = qs("#size_selection > .dropdown_item");
     removeAllChildNodes(dropdown);
-    let button = qs("#size_selection .dropbtn");
     for (let i = 0; i < results.rows.length; i++) {
-      if (i == 0) {
-        button.textContent =  results.rows.item(i)[system];
-      }
       let shoeSize = results.rows.item(i)[system];
       // Create an element for each size
       let p = gen("p");
