@@ -16,7 +16,6 @@
   }
 
   function setupDB() {
-    console.log(db);
     db.transaction(function(tx) {
       tx.executeSql("DROP TABLE shoeSize");
       tx.executeSql("CREATE TABLE IF NOT EXISTS shoeSize(id INTEGER PRIMARY KEY UNIQUE, eu FLOAT, usMen FLOAT, usWomen FLOAT, uk FLOAT, cm FLOAT, usKid TEXT);", [], null, function(tx, error) {console.error(error);});
@@ -195,6 +194,7 @@
       });
     }
     updateSystemRow();
+    updateSizeRow();
   }
 
   function selectSystem(system) {
